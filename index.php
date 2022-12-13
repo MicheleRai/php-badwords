@@ -12,10 +12,10 @@
     ?>
     <h1>BAD WORLDS</h1>
     <P>
-        <?= "${testo}"; ?>
+        <?= "$testo"; ?>
     </P>
     <p>
-        Il testo è lungo :<?= strlen(${testo}); ?>
+        Il testo è lungo :<?= strlen($testo); ?>
     </p>
     <form method="GET" action="">
         <label for="badwords">parola da censurare</label>
@@ -24,13 +24,14 @@
     </form>
     <?php
         $badwords = $_GET['badwords'];
-        $testo2 = str_ireplace($badwords, '***', $testo)
+        $testo2 = str_ireplace($_GET['badwords'], '***', $testo)
     ?>
     <P>
-        <?= "${testo2}"; ?>
+        <?= "$testo2"; ?>
     </P>
     <p>
-        Il testo è lungo :<?= strlen(${testo2}); ?>
+        Il testo è lungo :<?= strlen($testo2); ?>
+
     </p>
 </body>
 </html>
