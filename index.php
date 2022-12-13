@@ -14,10 +14,23 @@
     <P>
         <?= "${testo}"; ?>
     </P>
+    <p>
+        Il testo è lungo :<?= strlen(${testo}); ?>
+    </p>
     <form method="GET" action="">
         <label for="badwords">parola da censurare</label>
         <input type="text" id="badwords" name="badwords">
         <button>Censura!</button>
     </form>
+    <?php
+        $badwords = $_GET['badwords'];
+        $testo2 = str_ireplace($badwords, '***', $testo)
+    ?>
+    <P>
+        <?= "${testo2}"; ?>
+    </P>
+    <p>
+        Il testo è lungo :<?= strlen(${testo2}); ?>
+    </p>
 </body>
 </html>
